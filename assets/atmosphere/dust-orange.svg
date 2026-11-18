@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480">
+  <defs>
+    <radialGradient id="pigment" cx="45%" cy="42%" r="65%">
+      <stop offset="0" stop-color="#ff671d"/>
+      <stop offset="0.55" stop-color="#ff671d" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#ff671d" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="dust" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="wash"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" seed="7" stitchTiles="stitch" result="grain"/>
+      <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.8 -0.3" result="grainAlpha"/>
+      <feComposite in="wash" in2="grainAlpha" operator="in"/>
+    </filter>
+  </defs>
+  <path d="M70 166C46 111 103 52 165 64C211 72 214 32 275 48C341 66 315 133 365 147C433 165 447 219 411 266C380 306 427 350 370 397C315 443 270 398 229 415C160 444 124 405 124 357C125 309 55 309 48 255C43 219 89 205 70 166Z" fill="url(#pigment)" filter="url(#dust)"/>
+</svg>
